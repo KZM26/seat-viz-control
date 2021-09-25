@@ -13,5 +13,10 @@ The software implements the display unit component of the overall system
 
 ### Function
 
-The system controls a 6x6 grid of sensors via the GPIO lines. Power is selectivly provided to a sensor using a demux system.
+The system controls a 6x6 grid of sensors via the GPIO lines.
 
+Each sensor consists of a infrared (IR) LED and IR photodiode. Power is provide from the outputs of a demultiplexer whose inputs come from the microcontroller. Outputs are read to a multiplexer whose inputs again from the microcontroller.
+
+![image](https://user-images.githubusercontent.com/23017771/134787935-3552c210-9311-4a2e-a1d2-575a182d206a.png)
+
+Outputs are then sent to a computer connected via USB running the [Seat-viz](https://github.com/KZM26/seat-viz/edit/master/README.md) software. The communication library is based on the work of [Tilen Majerle](https://github.com/MaJerle). 
